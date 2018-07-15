@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/augmentedjs/chart-example#readme",
   "dependencies": {
-    "augmentedjs-next-chart": "^1.0.6",
+    "augmentedjs-next-chart": "^1.0.7",
     "compression": "^1.7.2"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import { HorizontalBarChartView, VerticalBarChartView } from "augmentedjs-next-chart";
 import Data from "./data.js";
+import css from "./styles/extra.css";
 
 const dogChart = new VerticalBarChartView({
   "title": "Dogs by average weight",
