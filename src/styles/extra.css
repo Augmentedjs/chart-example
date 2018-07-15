@@ -1,0 +1,173 @@
+/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+:root {
+  --primary-color: #8d6e63;
+  --primary-color-dark: #5f4339;
+  --primary-color-light: #be9c91;
+  --secondary-color: #f06292;
+  --secondary-color-dark: #ba2d65;
+  --secondary-color-light: #ff94c2;
+  --background-color: #f5f5f5;
+  --app-color: #fce4ec;
+  --light-text: rgba(255, 255, 255, 0.85);
+  --dark-text: rgba(0, 0, 0, 0.85);
+  --blue-500: #2196F3;
+  --yellow-500: #FFEB3B;
+  --orange-500: #FF9800;
+  --red-500: #F44336;
+  --black: black;
+  --purple-500: #9C27B0;
+  --green-500: #4CAF50;
+}
+
+/* The chart */
+
+.barChart {
+  background-color: transparent !important;
+  border: none !important;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.barChart caption {
+  margin-bottom: 8px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.barChart > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) {
+  border-left: 1px solid rgba(0,0,0,0.4);
+}
+.barChart > tbody:nth-child(2) > tr > td:last-of-type {
+  border-right: 1px solid rgba(0,0,0,0.4);
+}
+
+.barChart td {
+  height: 250px;
+  vertical-align: bottom;
+  border-top: 1px solid rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.1) 1px,
+    transparent 1px,
+    transparent 5%
+  );
+}
+
+.barChart th {
+  width: 18%;
+  border: 0;
+  height: 1em;
+  text-align: center;
+  position: relative;
+  background: none;
+}
+
+.barChart td.label, .barChart th.label {
+  width: 10%;
+  background: none;
+  border: 0;
+}
+
+.bar {
+  width: 100%;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+.bar > p {
+  display: block;
+  position: absolute;
+  top: -2.5em;
+  text-align: center;
+  font-size: 7pt;
+  width: 100%;
+}
+
+.bar.red {
+  background-color: var(--red-500);
+}
+
+.bar.purple {
+  background-color: var(--purple-500);
+}
+
+.bar.yellow {
+  background-color: var(--yellow-500);
+}
+
+.bar.blue {
+  background-color: var(--blue-500);
+}
+
+.bar.black {
+  background-color: var(--black);
+}
+
+.bar.orange {
+  background-color: var(--orange-500);
+}
+
+.bar.green {
+  background-color: var(--green-500);
+}
+
+td.label p {
+  text-align: right;
+  font-size: 8pt;
+  margin: 0;
+  color: var(--dark-text);
+}
+
+td.label p.text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -1.25em;
+  transform: rotate(90deg);
+  white-space: nowrap;
+}
+
+th.label.text {
+  font-size: 8pt;
+  font-weight: normal;
+  color: var(--dark-text);
+}
+
+td.label p.top {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 1em;
+}
+
+td.label p.bottom {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1em;
+}
+
+/* router transitions */
+.main {
+  transition: opacity 1s ease;
+}
+
+.transition-in {
+  opacity: 1.0;
+}
+
+.transition-out {
+  opacity: 0;
+}
