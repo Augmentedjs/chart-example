@@ -1,4 +1,4 @@
-import { HorizontalBarChartView, VerticalBarChartView } from "augmentedjs-next-chart";
+import { HorizontalBarChartView, VerticalBarChartView } from "presentation-chart";
 import Data from "./data.js";
 import css from "./styles/extra.css";
 
