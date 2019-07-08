@@ -1,8 +1,12 @@
+import material from "presentation-css";
+import roboto from "typeface-roboto";
 import { HorizontalBarChartView, VerticalBarChartView } from "presentation-chart";
-import Data from "./data.js";
 import css from "./styles/extra.css";
 
+import Data from "./data.js";
+
 const dogChart = new VerticalBarChartView({
+  "id": "dogs",
   "title": "Dogs by average weight",
   "xTitle": "Breed",
   "yTitle": "Pounds",
@@ -22,6 +26,7 @@ for (i = 0; i < l; i++) {
 }
 
 const testChart = new VerticalBarChartView({
+  "id": "num-vert",
   "title": "bunch of numbers",
   "xTitle": "X",
   "yTitle": "Y",
@@ -39,6 +44,7 @@ for (i = 0; i < l2; i++) {
   });
 }
 const testChart2 = new HorizontalBarChartView({
+  "id": "num-horz",
   "title": "bunch of numbers",
   "xTitle": "X",
   "yTitle": "Y",

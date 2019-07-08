@@ -1,13 +1,13 @@
 body {
   background-color: #eeeeee;
   font-family: "Roboto", sans-serif;
-  color: rgba(0, 0, 0, 0.85);
-}
+  color: rgba(0, 0, 0, 0.85); }
 
 #num-vert td, #dogs td {
-  height: 20rem;
-}
+  height: 20rem; }
 
 .barChart.vertical td.label, .barChart.vertical th.label {
-  width: 4rem !important;
-}
+  width: 4rem !important; }
+
+
+/*# sourceMappingURL=main.css.map*/
