@@ -227,53 +227,58 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const dogChart = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["VerticalBarChartView"]({
-  "id": "dogs",
-  "title": "Dogs by average weight",
-  "xTitle": "Breed",
-  "yTitle": "Pounds",
-  "data": _data_js__WEBPACK_IMPORTED_MODULE_4__["default"]
-});
-dogChart.render();
-const testData = [],
-      l = 50;
-let i = 0;
 
-for (i = 0; i < l; i++) {
-  testData.push({
-    "X": i,
-    "Y": Math.ceil(Math.random() * 100),
-    "style": "purple"
+const renderCharts = async () => {
+  const dogChart = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["VerticalBarChartView"]({
+    "id": "dogs",
+    "title": "Dogs by average weight",
+    "xTitle": "Breed",
+    "yTitle": "Pounds",
+    "data": _data_js__WEBPACK_IMPORTED_MODULE_4__["default"]
   });
-}
+  await dogChart.render();
+  const testData = [],
+        l = 50;
+  let i = 0;
 
-const testChart = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["VerticalBarChartView"]({
-  "id": "num-vert",
-  "title": "bunch of numbers",
-  "xTitle": "X",
-  "yTitle": "Y",
-  "data": testData
-});
-testChart.render();
-const testData2 = [],
-      l2 = 5;
+  for (i = 0; i < l; i++) {
+    await testData.push({
+      "X": i,
+      "Y": Math.ceil(Math.random() * 100),
+      "style": "purple"
+    });
+  }
 
-for (i = 0; i < l2; i++) {
-  testData2.push({
-    "X": Math.ceil(Math.random() * 100),
-    "Y": i,
-    "style": "blue"
+  const testChart = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["VerticalBarChartView"]({
+    "id": "num-vert",
+    "title": "bunch of numbers",
+    "xTitle": "X",
+    "yTitle": "Y",
+    "data": testData
   });
-}
+  await testChart.render();
+  const testData2 = [],
+        l2 = 5;
 
-const testChart2 = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["HorizontalBarChartView"]({
-  "id": "num-horz",
-  "title": "bunch of numbers",
-  "xTitle": "X",
-  "yTitle": "Y",
-  "data": testData2
-});
-testChart2.render();
+  for (i = 0; i < l2; i++) {
+    await testData2.push({
+      "X": Math.ceil(Math.random() * 100),
+      "Y": i,
+      "style": "blue"
+    });
+  }
+
+  const testChart2 = new presentation_chart__WEBPACK_IMPORTED_MODULE_2__["HorizontalBarChartView"]({
+    "id": "num-horz",
+    "title": "bunch of numbers",
+    "xTitle": "X",
+    "yTitle": "Y",
+    "data": testData2
+  });
+  await testChart2.render();
+};
+
+renderCharts();
 
 /***/ }),
 

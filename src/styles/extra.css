@@ -4,6 +4,22 @@ body {
   color: rgba(0, 0, 0, 0.85);
 }
 
+#dogs {
+  display: inline-block;
+  width: 30rem;
+  height: 15rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+#num-horz {
+  display: inline-block;
+  width: 30rem;
+  height: 10rem;
+  vertical-align: top;
+  text-align: left;
+}
+
 #num-vert td, #dogs td {
   height: 20rem;
 }

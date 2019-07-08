@@ -2,10 +2,9 @@
   "presets": [
     ["@babel/preset-env", {
       "targets": {
-        "browsers": ["safari 11", "firefox > 60", "not edge > 0", "ios 11", "chrome > 66", "not ie > 0", "not op_mini all"]
+        "browsers": ["firefox > 66","chrome > 72"]
       },
-      "debug": true,
-      "modules": false
+      "debug": true
     }]
   ]
 }
