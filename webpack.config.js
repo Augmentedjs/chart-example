@@ -3,13 +3,14 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: ['./src/index.js'],
   context: __dirname,
   target: "web",
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     chunkFilename: '[name].js'
   },
@@ -60,7 +61,7 @@ module.exports = {
     ]
   },
   stats: "errors-only",
-  devtool: "source-map",
+  devtool: "cheap-source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
@@ -73,7 +74,11 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(require("./package.json").version)
+    }),
+    new ManifestPlugin()
   ],
   // optimization
   optimization: {
@@ -82,13 +87,12 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         default: false,
-        vendors: {
-          reuseExistingChunk: true
-        },
+        vendors: false,
+
         // vendor chunk
         vendor: {
           // sync + async chunks
-          chunks: 'all',
+          chunks: "all",
 
           // import file path containing node_modules
           test: /node_modules/
